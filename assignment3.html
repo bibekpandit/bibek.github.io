@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible">
+    <title>Bibek's Webpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Roboto Slab', serif;
+        }
+        ul{
+            font-family: 'Open Sans', sans-serif;
+        }
+        .column {
+            float: left;
+            width: 45%;
+            padding: 5px;
+        }
+
+        /* Clear floats after image containers */
+        .row {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .column2 {
+            float: left;
+            width: 20%;
+            padding: 10px;
+        }
+
+    </style>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Assignment: 3</h1>
+        <h3>Name: Bibek K Pandit</h3>
+        <h3>Email: bibek@mit.edu</h3>
+        <hr>
+        <div>
+            <ul>
+                
+                <li><b>Spend some time playing with this demo. Draw an input, modify it, and observe how the results at each layer change as you change the drawing. Create some inputs that look vaguely like digits, but that confuse the network, i.e., where two or more of the labels register. Write up interesting observations about what you see combined with illustrative screenshots.
+                </b></li>
+                <li>Model performs well on most handwritten digitsl. However, it gets confused very easily. A number written in dotted format (like 4 in following image) is widely misclassified. Similarly, numbers drawn in a very distinguishable manner, but slightly off-center of rotated are mis-classified.</li>
+                <br>
+                <div class="row">
+                    <div class="column">
+                      <img src="assignment3/4_1.jpg" alt="Dotted Number" style="width:100%">
+                    </div>
+                    <div class="column">
+                      <img src="assignment3/4_2.jpg" alt="1 classified as 2" style="width:100%">
+                    </div>
+                </div>
+                <br>
+
+                <li><b>(Section 3.5) 1. What happens when you pass an image through the same filter several times? Do you observe any interesting characteristics or padding artifacts?</b></li>
+                <li>Yes, there is padding artifacts and the model image starts looking more and more like like the style image.</li>
+                <br>
+                <div class="row">
+                    <div class="column2">
+                      <img src="assignment3/3_5_2original.png" alt="1" style="width:100%">
+                    </div>
+                    <div class="column2">
+                      <img src="assignment3/3_5_2original2.png" alt="2" style="width:100%">
+                    </div>
+                    <div class="column2">
+                        <img src="assignment3/3_5_2original3.png" alt="3" style="width:100%">
+                    </div>
+                    <div class="column2">
+                        <img src="assignment3/3_5_2original4.png" alt="4" style="width:100%">
+                      </div>
+                </div>
+                <br>
+                
+                <li><b>(Section 3.5) 2. Apply a filter to an image and then apply another filter to that already-filtered image. Is the result similar to what you would get when you apply the second filter to the original image?</b></li>
+                <li>No, the results are different as can be illustrated in the following images.</li>
+                <br>
+                <h3>Applying two different filters</h3>
+                <div class="row">
+                    <div class="column2">
+                      <img src="assignment3/face.jpg" alt="1" style="width:100%">
+                    </div>
+                    <div class="column2">
+                      <img src="assignment3/pablo.jpg" alt="2" style="width:100%">
+                    </div>
+                    <div class="column2">
+                        <img src="assignment3/3_5_2.png" alt="3" style="width:100%">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="column2">
+                        <img src="assignment3/3_5_2.png" alt="3" style="width:100%">
+                    </div>
+                    <div class="column2">
+                        <img src="assignment3/rain_princess.jpg" alt="4" style="width:100%">
+                    </div>
+                    <div class="column2">
+                        <img src="assignment3/3_5_21.png" alt="4" style="width:100%">
+                      </div>
+                </div>
+                <br>
+                <h3>Applying one filter</h3>
+                <div class="row">
+                    <div class="column2">
+                        <img src="assignment3/face.jpg" alt="3" style="width:100%">
+                    </div>
+                    <div class="column2">
+                        <img src="assignment3/rain_princess.jpg" alt="4" style="width:100%">
+                    </div>
+                    <div class="column2">
+                        <img src="assignment3/3_5_2original.png" alt="4" style="width:100%">
+                      </div>
+                </div>
+
+                <li><b>(Section 3.5) 3. Try different combinations of filters and number of times you filter an image. Note on your website if you have any interesting observations or insights.</b></li>
+                <li>La Muse applied 4 times on face, and then applied the scream.</li>
+                <br>
+                <div class="row">
+                    <img src="assignment3/3_5_2original4_pablo_scream.png" style="width:100%">
+                </div>
+                <br>
+
+                <li><b>(Section 3.6) 3. Do you have a hypothesis for why CIFAR-10 is so much harder to train on than Fashion MNIST and MNIST (i.e. it’s more difficult to achieve a 90%+ accuracy) while Fashion MNIST has similar training times to MNIST (even though Fashion MNIST is more complex than MNIST)?</b></li>
+                <li>CIFAR-10 contains RGB images with a lot more details in the background whereas Fashion MNIST and MNIST are grayscale images with few details and little background noise. This is why it’s much harder to train on CIFAR dataset.</li>
+
+                <li><b>(Section 3.6) 4. How does adding more convolutional layers relate to accuracy and training speed? Is there a point at which adding more layers plateaus or even decreases the maximum accuracy you are able to achieve with that model?</b></li>
+                <li>Adding more convolutional layers increases the accuracy initially. It also increases the training time (decreasing the speed) by a few orders. When the number of convolutional layers gets around 8-10, the performance starts decreasing, while the training time ever-increasing. The assumption is this is due to decreasing gradient flow across the layers.</li>
+
+                <li><b>(Section 3.6) 5. Challenge: Are you able to find an architecture/combination of techniques that can get you to 60% accuracy on CIFAR-10 within 1 minute of training? 5 minutes? 10 minutes?</b></li>
+                <li>No, getting even 60% accuracy is hard.</li>
+
+                <br>
+                <h3> Training on MNIST data</h3>
+                <div class="row">
+                    <div class="column">
+                        <img src="assignment3/cnn1.png" alt="3" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="assignment3/cnn1_1.png" alt="4" style="width:100%">
+                    </div>
+                </div>
+
+                <h3> Training on CIFAR-10 data</h3>
+                <div class="row">
+                    <div class="column">
+                        <img src="assignment3/cnn2.png" alt="3" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="assignment3/cnn2_1.png" alt="4" style="width:100%">
+                    </div>
+                </div>
+
+
+
+
+
+
+                <li><b> (Section 3.6) 7. Add links to your code files on your website (please make sure these are text files and not screenshots so that the graders can run your code if necessary).</b></li>
+                <li><a href="https://github.com/bibekpandit/bibekpandit.github.io/tree/master/assignment3/index.js">Here</a> is the link to modified code.</li>
+                <br>
+
+            </ul>
+        </div>
+    </div>
+    
+    
+    
+</body>
+</html>

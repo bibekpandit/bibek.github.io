@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible">
+    <title>Bibek's Webpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Roboto Slab', serif;
+        }
+        ul{
+            font-family: 'Open Sans', sans-serif;
+        }
+        .column {
+            float: left;
+            width: 45%;
+            padding: 5px;
+        }
+
+        /* Clear floats after image containers */
+        .row {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .column2 {
+            float: left;
+            width: 45%;
+            padding: 5px;
+        }
+
+        .column3 {
+            float: left;
+            width: 28%;
+            padding: 20px;
+        }
+
+
+    </style>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Assignment: 6</h1>
+        <h3>Name: Bibek K Pandit</h3>
+        <h3>Email: bibek@mit.edu</h3>
+        <hr>
+        <div>
+            <ul>
+                
+                <li><b>1. What is the reward scheme for FrozenLake?
+                </b></li>
+                <li>The reward is 1 if you make it to <b>G</b> and 0 otherwise.</li>
+                <br>
+
+                <li><b>2. How big is the table used for Q-learning above?</b></li>
+                <li>The table is of size 4 x 4, each cell representing one of 4 kinds of surfaces: <b>S, F, G</b> and <b>H</b>.</li>
+                <br>
+
+
+                <li><b>3. Did the rewards improve over time? Why or why not?</b></li>
+                <li>Yes, the rewards improved over time. In the beginning,the player earns a reward of 0 more often than 1, and later the reward of 1 more often than 1.</li>
+                <div class="row">
+                    <h3>Average reward collected by the nth iteration</h3>
+                    <img src="Reinforcement_Learning/avgReward.png" alt="" style="width:100%">
+                </div>
+                <br>
+                
+
+                <li><b>4. In the above code segment, we provided some values for the learning rate and discount factor. Try different values for the learning rate. What do you observe?</b></li>
+                <li>I tried a bunch of values for learning rate and discount factor. I felt like the lr=0.8 and discount =0.95 is the optimum.</li>
+                <br>
+                <div class="row">
+                    <div class="column3">
+                        <h3>lr = 1, discount = 1</h3>
+                        <img src="Reinforcement_Learning/Figure_2.png" alt="" style="width:100%">
+                    </div>
+                    <div class="column3">
+                            <h3>lr = 0.5, discount = 1</h3>
+                            <img src="Reinforcement_Learning/Figure_3.png" alt="" style="width:100%">
+                    </div>
+                    <div class="column3">
+                            <h3>lr = 0.8, discount = 1</h3>
+                            <img src="Reinforcement_Learning/Figure_5.png" alt="" style="width:100%">
+                    </div>
+                </div>
+                <br>
+
+            </ul>
+        </div>
+    </div>
+    
+    
+    
+</body>
+</html>

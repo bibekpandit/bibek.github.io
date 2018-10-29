@@ -56,7 +56,7 @@
         <hr>
         <div>
             <ul>
-                <h3>Understanding LSTMs</h3>
+                <h3><u>Understanding LSTMs</u></h3>
                 <li><b>1. LSTMs consist of chained, repeating modules. At a high level, what are the two pieces of information that is passed between modules?
                 </b></li>
                 <li>The cell state carries the long-term information, it is the memory component responsible for remembering information for long periods of time. The other information is the recent information passed in the neural nets, thus the name long short term memory.</li>
@@ -70,12 +70,13 @@
                 <li><b>3.  The blog post describes two views of RNN/LSTM architectures. In one of these views, we think of the RNN as being "unrolled" into a chain of repeating modules. What values (represented with tensors) are shared between these modules, and what values are different?</b></li>
                 <li>The weight matrix (or tensor if more than 2 dimensional) is the same between modules. The inputs, x, and the outputs, h, are different between these modules.</li>
                 
+                <br>
 
                 <li><b>4. Why do you think a sigmoid non-linearity is used here instead of a ReLU nonlinearity (as we were using in most of our previous models)?</b></li>
                 <li>Sigmoid squashes its output between 0 and 1, effectively giving a percent value of how much information to forget. A ReLU on the other hand can output an arbitrary positive number which would not make sense if you are trying to calculate the fraction of information you want to forget.</li>
                 <br>
 
-                <h3>Text Generation</h3>
+                <h3><u>Text Generation</u></h3>
                 
                 <li><b>1. Run the model for 10 to 15 epochs, or until you see interesting results. Pause the model and record the perplexity. Perplexity is a measurement of how well the model predicts a sample. A low perplexity indicates that the model is good at making predictions.</b></li>
                 <li>I got relatively low perplexity. Some perplexity values: 3.31, 4.37, 4.15.</li>
@@ -83,22 +84,28 @@
 
                 <li><b>2. Adjust the softmax sample temperature, and continue training for a few samples. Softmax sample temperature is a hyperparameter that determines how softmax computes the log probabilities of the prediction outputs. If the temperature is high, the probabilities will go toward zero and you will see less frequent words. If the temperature is low, then you will see more common words, but there may be more repetition.  Try to find a temperature that produces the most natural seeming text, and give some examples of your generated sentence results.</b></li>
                 <li>The temperature of 0.32 produced very natural seeming text. Going even lower produced better results, but the same word would occur multiple times. Some example sentences that were generated are:</li>
-                <li>When I will so will one the star I will stas it for the stand the sky the rain</li>
-                <li>I want you to the way up and the best in the come a sky for the stand to my had you to give me the st</li>
-                <li>I will to my had the dark</li>
-                <li>I will and the had you love me that was every be the with a moullds the should you love me the stalms</li>
-                <li>I want and the ready the lights the onws me the thing I am this say the way you were me and the stand</li>
+                <ol>
+                    <li>When I will so will one the star I will stas it for the stand the sky the rain</li>
+                    <li>I want you to the way up and the best in the come a sky for the stand to my had you to give me the st</li>
+                    <li>I will to my had the dark</li>
+                    <li>I will and the had you love me that was every be the with a moullds the should you love me the stalms</li>
+                    <li>I want and the ready the lights the onws me the thing I am this say the way you were me and the stand</li>
+                </ol>
                 <br>
 
                 <li><b>3. Write down any observations about your generated sentence results. Does your text reflect properties of the input sources you used (i.e. vocabulary, sentence length)?</b></li>
                 <li>It seems like the generated results reflect the input sources. The generated sentences sound like that from a song/poem (the input is so too).</li>
+                <br>
 
-                <li><b>Try changing the model parameters and initialization.</b></li>
+                <li><b>4. Try changing the model parameters and initialization.</b></li>
                 <li>Changed Learning rate to 0.00025. The model did worse than before even after training for 50 epochs. The perplexity was around 7. Example predictions with temperature 0.32 are:</li>
-                <li>I wand the the side my the so the der it in the wans the me your to the en a love you come the the ke</li>
-                <li>The lot love to the cound you mare the so the to the lith the wath the wike the came the love the wan</li>
+                <ol>
+                    <li>I wand the the side my the so the der it in the wans the me your to the en a love you come the the ke</li>
+                    <li>The lot love to the cound you mare the so the to the lith the wath the wike the came the love the wan</li>
+                </ol>
+                
 
-                <h3>Music Generation</h3>
+                <h3><u>Music Generation</u></h3>
                 <li>The link to the code as well as the generated MIDI files is <a href="assignment7">here</a>.</li>
 
 
